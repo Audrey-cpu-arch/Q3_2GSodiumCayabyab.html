@@ -1,36 +1,26 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <style>
-    body{
-        text-align: center;
-        
-    }
-    div {
-        padding-top: 40px;
-        padding-bottom: 40px;
-    }
 
-  
-
-    </style>
-
+ <link rel="stylesheet" type="text/css" href="Q32ndGradedExercise.css">
     </head>
     <body>
      
         
 
-        <form method = "post" action = "submit">
+        <form method = "post" action = "submit" onsubmit = "submitform()"  onreset = "resetform()"> 
+           
+<h1> Student Information Form</h1>
 
             <div>
-             <label for = 'id'> #1 information </label>
+             <label for = 'id'> student id: </label>
            <input id = "studentid" type = "number" required>
            </div>
 
 
 
             <div>
-            <label for = 'fullname'> #2 information </label>
+            <label for = 'fullname'> student full anme: </label>
             <input id = "fullname" type = "text" required>
             </div>
 
@@ -39,19 +29,23 @@
 <input id = "birthday" type = "date" required>
 </div>
 
+<fieldset>
+    <legend> Student Digital Info</legend>
 <div>
- <label for = 'Email address'> #4 information </label>
+ <label for = 'Email address'> email address: </label>
         <input id = "emailaddress" type = "email" required>
 </div>
 
 
 <div>
-         <label for = 'Mobile Phone'> #5 information </label>
+         <label for = 'Mobile Phone'> phone number: </label>
         <input id = "mobilephone" type = "text" required>
 </div>
+</fieldset>
+
 
 <div>
- <label for = 'Grade Level'> #6 information </label>
+ <label for = 'Grade Level'> student grade level: </label>
 
         <select id = "gradelevel" required>
             <option value = "seventhgrade"> 7 </option>
@@ -63,15 +57,18 @@
         </select>
 </div>
 
-         <label for = 'Intern / Extern'> #7 information </label>
+<div>
+         <label for = 'Intern / Extern' required> intern or extern: </label>
        
         <input type = "radio" id="intern">
         <label for="intern">Intern</label>
         <input type = "radio" id="extern">
         <label for="extern">Extern</label>
+</div>
 
 
-        <label for = 'Preferred Organization / Club'> #8 information </label>
+<div>
+        <label for = 'Preferred Organization / Club'> preferred organization / club: </label>
        <select id = "club" required>
             <option value = "christian"> ACTS </option>
             <option value = "firsbee"> ALIANTI </option>
@@ -80,21 +77,40 @@
             <option value = "photography"> EXPOSURE </option>
             <option value = "others"> other </option>
         </select>
+</div>
 
+<div>
 
-         <label for = 'reason'> #9 information </label>
+         <label for = 'reason'> reason(s) for joining: </label>
          <br>
-        <textarea id = "reasonsforjoining" rows = "4" cols = "100"> </textarea>
+        <textarea  id = "reasonsforjoining" rows = "4" cols = "100"> </textarea>
+        </div>
 
 
   
 <div>       
-<input type="submit">
+<input type="submit" value = "submit form" onclick="alert('Are you sure you want to submit the form?')">
 </div>
+
 <div>    
-<input type="reset">
+<input type="reset" value = "reset form" onclick="alert('Are you sure you want to reset the form?')">
 </div>
 
 </form>
+
+<script>
+function resetform(){
+    alert("The form has been resetted.");
+}
+
+
+function submitform(){
+    alert("The form has been submitted.");
+}
+
+
+
+
+</script>
     </body>
 </html>
