@@ -12,5 +12,14 @@ background-color: lavender;
 
       body{
         text-align: center;
+        background-color:aliceblue;
         
+    }
+
+    h1{
+      border: 2px solid orchid;
+      background-color: lavender;
+      border-radius: 100px;
+      color: purple;
+
     }

@@ -9,36 +9,44 @@
         
 
         <form method = "post" action = "submit" onsubmit = "submitform()"  onreset = "resetform()"> 
-           
+           <!--onblur, onsubmit, and onreset is placed within the form tag  -->
+          
+           <!--onblur executes a function and is triggered when the elements is no longer the active element. It triggers  a function when outside the input field. It's the oppoiste on focus, which actiates a function whne clciked on. Onblur and onfocus are opposites---->
+
+           <!-- activates a function when the elemnet's value changes-->
+            <!--you can put id within the fieldset-->
+            
 <h1> Student Information Form</h1>
+            
 
             <div>
-             <label for = 'id'> student id: </label>
+             <label for = 'studentid'> student id: </label>
            <input id = "studentid" type = "number" required>
            </div>
 
 
 
             <div>
-            <label for = 'fullname'> student full anme: </label>
+            <label for = 'fullname'> student full name: </label>
             <input id = "fullname" type = "text" required>
             </div>
 
+            <!-- making the "label for" and "input id" the same has an effect, it shows that this "label for" is for this input-->
 <div>
- <label for = 'Birthday'> #3 information </label>
+ <label for = 'birthday'> #3 information </label>
 <input id = "birthday" type = "date" required>
 </div>
 
 <fieldset>
     <legend> Student Digital Info</legend>
 <div>
- <label for = 'Email address'> email address: </label>
+ <label for = 'emailaddress'> email address: </label>
         <input id = "emailaddress" type = "email" required>
 </div>
 
 
 <div>
-         <label for = 'Mobile Phone'> phone number: </label>
+         <label for = 'mobilephone'> phone number: </label>
         <input id = "mobilephone" type = "text" required>
 </div>
 </fieldset>
@@ -60,22 +68,26 @@
 <div>
          <label for = 'Intern / Extern' required> intern or extern: </label>
        
-        <input type = "radio" id="intern">
+        <input type = "radio" id="intern" name = "name">
         <label for="intern">Intern</label>
-        <input type = "radio" id="extern">
+        <input type = "radio" id="extern" name = "name">
         <label for="extern">Extern</label>
 </div>
+
+<!---For radio buttons, in order for one to be only chosen they must have the same name-->
 
 
 <div>
         <label for = 'Preferred Organization / Club'> preferred organization / club: </label>
-       <select id = "club" required>
+       <select id = 'Preferred Organization / Club' required>
             <option value = "christian"> ACTS </option>
             <option value = "firsbee"> ALIANTI </option>
             <option value = "astronomy"> ASTROSOC </option>
             <option value = "chemistry"> ATOM </option>
             <option value = "photography"> EXPOSURE </option>
             <option value = "others"> other </option>
+            <option value = "none"> none </option>
+            
         </select>
 </div>
 
