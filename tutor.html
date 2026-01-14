@@ -3,39 +3,31 @@
 
 <body >
 
-  <div id="box" style="width: 200px; height: 100px; background-color: lightgray; padding: 20px; margin-bottom: 20px;" onmouseover = "background_colorblue(box)" onmouseout = "background_colorgray(box)">
+  <div id="box" style="width: 200px; height: 100px; background-color: lightgray; padding: 20px; margin-bottom: 20px;" onmouseover = "background_colorblue()" onmouseout = "background_colorgray()">
     onemouseover, background change to light blue. onmouseout, backgrround color change to lightgray
   </div>
 
   <label>Type your name: </label>
-  <input type="text" placeholder="Start typing..." oninput = "livepreview()">
+  <input type="text" placeholder="Start typing..." oninput = "document.getElementById('preview').innerText = this.value">
   
   <p>Live Preview: <span id="preview" style="font-weight: bold;">...</span></p>
 <!--Every time you type a character (oninput), the text inside the <span id="preview" updates to match what you typed  -->
   <hr>
 
   <label >Choose a theme: </label>
-  <select onchange = "select_theme()">
+  <select onchange = "alert ('You changed the theme!')">
 <!--When user selects a theme, the background color of the page changes and then an alert pops up saying "You changed the theme!"-->
     <option value="light">Light</option>
     <option value="dark">Dark</option>
   </select>
 
   <br><br>
-
-  <button id = "button"onclick = "button_textchange()">Click to Save</button>
+<!--document.getElementById(button).innerText = this.innerText -->
+  <button id = "button" onclick = "this.innerText = 'Saved'">Click to Save</button>
 <!--When button is clicked, button text changes to "Saved"-->
 
 <script>
 
-    function livepreview(){
-       
-    }
-
-
-function select_theme(){
-    alert ("You changed the theme!");
-}
 
 function background_colorblue(){
     document.getElementById("box").style.backgroundColor = "lightblue";
@@ -44,11 +36,8 @@ function background_colorblue(){
 function background_colorgray(){
     document.getElementById("box").style.backgroundColor = "lightgray";
 }
-
-function button_textchange(){
-    document.getElementById("button").innerText = "Saved!";
-}
 </script>
 
 </body>
 </html>
+krd-jick-hxk
