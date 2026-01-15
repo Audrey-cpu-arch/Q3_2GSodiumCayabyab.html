@@ -8,51 +8,52 @@
      
         
 
-        <form method = "post" action = "submit" onsubmit = "submitform()"  onreset = "resetform()"> 
-           <!--onblur, onsubmit, and onreset is placed within the form tag  -->
+        <form method = "post" action = "submit" onsubmit = "submitform()"  onreset = "resetform()"  > 
           
-           <!--onblur executes a function and is triggered when the elements is no longer the active element. It triggers  a function when outside the input field. It's the oppoiste on focus, which actiates a function whne clciked on. Onblur and onfocus are opposites---->
-
-           <!-- activates a function when the elemnet's value changes-->
-            <!--you can put id within the fieldset-->
             
 <h1> Student Information Form</h1>
-            
 
-            <div>
+
+            
+                <fieldset>
+                    <legend> Student Id</legend>
              <label for = 'studentid'> student id: </label>
            <input id = "studentid" type = "number" required>
-           </div>
+           
+        </fieldset>
 
 
-
-            <div>
+            
+                <fieldset>
+                    <legend> Student Name</legend>
             <label for = 'fullname'> student full name: </label>
             <input id = "fullname" type = "text" required>
-            </div>
-
-            <!-- making the "label for" and "input id" the same has an effect, it shows that this "label for" is for this input-->
-<div>
- <label for = 'birthday'> #3 information </label>
-<input id = "birthday" type = "date" required>
-</div>
+        </fieldset>
+            
 
 <fieldset>
-    <legend> Student Digital Info</legend>
-<div>
- <label for = 'emailaddress'> email address: </label>
-        <input id = "emailaddress" type = "email" required>
-</div>
-
-
-<div>
-         <label for = 'mobilephone'> phone number: </label>
-        <input id = "mobilephone" type = "text" required>
-</div>
+    <legend> Student Birthday </legend>
+ <label for = 'birthday'> birthday: </label>
+<input id = "birthday" type = "date" required>
 </fieldset>
 
 
-<div>
+<fieldset>
+    <legend> Student Digital Info</legend>
+
+
+ <label for = 'emailaddress'> email address: </label>
+        <input id = "emailaddress" type = "email" required>
+<br><br>
+         <label for = 'mobilephone'> phone number: </label>
+        <input id = "mobilephone" type = "text" required>
+
+</fieldset>
+
+
+
+    <fieldset>
+        <legend> Student Grade Level </legend>
  <label for = 'Grade Level'> student grade level: </label>
 
         <select id = "gradelevel" required>
@@ -63,21 +64,24 @@
             <option value = "eleventhgrade"> 11 </option>
             <option value = "twelfthgrade"> 12 </option>
         </select>
-</div>
+    </fieldset>
 
-<div>
+    <fieldset>
+        <legend> Student Info </legend>
          <label for = 'Intern / Extern' required> intern or extern: </label>
+         <br>
        
         <input type = "radio" id="intern" name = "name">
         <label for="intern">Intern</label>
         <input type = "radio" id="extern" name = "name">
         <label for="extern">Extern</label>
-</div>
-
-<!---For radio buttons, in order for one to be only chosen they must have the same name-->
+        </fieldset>
 
 
-<div>
+
+
+    <fieldset>
+        <legend> Studen Preference</legend>
         <label for = 'Preferred Organization / Club'> preferred organization / club: </label>
        <select id = 'Preferred Organization / Club' required>
             <option value = "christian"> ACTS </option>
@@ -89,14 +93,18 @@
             <option value = "none"> none </option>
             
         </select>
-</div>
+    </fieldset>
 
-<div>
+
+    <fieldset>
+        <legend> Student Reasons</legend>
 
          <label for = 'reason'> reason(s) for joining: </label>
          <br>
         <textarea  id = "reasonsforjoining" rows = "4" cols = "100"> </textarea>
-        </div>
+
+    </fieldset>
+
 
 
   

@@ -1,0 +1,11 @@
+ <!--onblur, onsubmit, and onreset is placed within the form tag  -->
+          
+           <!--onblur executes a function and is triggered when the elements is no longer the active element. It triggers  a function when outside the input field. It's the oppoiste on focus, which actiates a function whne clciked on. Onblur and onfocus are opposites---->
+
+           <!-- activates a function when the elemnet's value changes-->
+            <!--you can put id within the fieldset-->
+
+
+            
+            <!-- making the "label for" and "input id" the same has an effect, it shows that this "label for" is for this input-->
+             <!---For radio buttons, in order for one to be only chosen they must have the same name-->

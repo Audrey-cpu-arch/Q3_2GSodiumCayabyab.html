@@ -1,25 +1,49 @@
-  div {
-        padding-top: 40px;
-        padding-bottom: 40px;
-        
-    }
+
 
       fieldset{
-border: 1px solid purple;
-background-color: lavender;
+        padding-top: 50px;
+        padding-bottom: 50px;
+background-color: rgba(255, 255, 255, 0.774);
+width:50%;
+text-align:center;
+margin-left:700px;
+position:static;
     }
 
 
       body{
         text-align: center;
-        background-color:aliceblue;
+        background-color: lavender;
+        position:static;
         
     }
 
     h1{
-      border: 2px solid orchid;
+      
       background-color: lavender;
-      border-radius: 100px;
       color: purple;
+      margin-top:0px;
+      position:static;
+      text-align:center;
+      
 
+    }
+
+    input:focus{
+      border-color: blue;
+    }
+
+   legend{
+      color:purple;
+      font-weight:bold;
+    }
+
+    legend{
+      font-weight: bold;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    div{
+      padding-top: 20px;
+      padding-bottom: 20px;
     }
