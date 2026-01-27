@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<form onsubmit="checkPasswords()">
+    
+    <input type="password" id="pass1" placeholder="New Password" required>
+    <input type="password" id="pass2" placeholder="Confirm Password" required>
+    
+    <button type="submit">Change Password</button>
+    <button type = "button" id="" onclick="text()">Show Password</button>
+
+
+</form>
+
+<script>
+    function text(){
+        //if the input type is "password", change it to "text"
+         document.getElementById("pass1").type ="text";
+         document.getElementById("pass2").type ="text";
+        //elseif the input type is text, change it to password
+        //changes input type from "password"to "text"
+         document.getElementById("button").innerText="Hide Password";
+     
+        
+        if(document.getElementById("pass1").type =="text" || document.getElementById("pass2").type =="text"){
+             document.getElementById("button").innerText ="Show Password";
+            document.getElementById("pass2").type ="password";
+            document.getElementById("pass1").type ="password";
+        }
+
+    }
+        
+
+    function checkPasswords() {
+        //code that checks if passwords match
+        let submitted_password = document.getElementById("pass1");
+        let newpassword = document.getElementById("pass2");
+        //changes input type from "password"to "text"
+
+        if(newpassword.value != submitted_password.value){
+            alert("The passwords don't match !");
+           return false;
+        }
+        //if not, alert the user and prevent form submission
+        else{
+        alert("Success! Passwords match.");
+        return true; }
+    }
+
+    //return true causes the form to be submitted
+    //return false prevents the form from being submitted
+</script>
+</body>
+</html>
