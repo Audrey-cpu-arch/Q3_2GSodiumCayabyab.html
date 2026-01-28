@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Notes Demo</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width:700px; margin:20px; }
+    input, button { padding:8px; margin:4px 0; }
+    li { margin:6px 0; }
+  </style>
+</head>
+<body>
+  <h2>Save a Note</h2>
+  <form id="noteForm">
+    <input id="name" placeholder="Your name" required>
+    <input id="note" placeholder="Short note" required>
+    <button type="submit">Save</button>
+  </form>
+
+  <h3>Saved Notes</h3>
+  <ul id="list"></ul>
+
+  <script>
+    // Helpers for localStorage
+    const KEY = 'notes';
+
+    function loadNotes() {
+      const raw = localStorage.getItem(KEY);
+      return raw ? JSON.parse(raw) : [];
+    }
+
+    function saveNotes(notes) {
+      localStorage.setItem(KEY, JSON.stringify(notes));
+    }
+
+    // Render list to the page
+    function render() {
+      const notes = loadNotes();
+      const list = document.getElementById('list');
+      if (notes.length === 0) {
+        list.innerHTML = '<li><em>No notes yet</em></li>';
+        return;
+      }
+      list.innerHTML = notes.map((n, i) =>
+        `<li>
+           <strong>${escapeHtml(n.name)}</strong> (${n.time}) — ${escapeHtml(n.text)}
+           <button data-i="${i}">Delete</button>
+         </li>`
+      ).join('');
+    }
+
+    // Simple HTML escape to avoid accidental HTML injection in demo
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    }
+
+    // Form handling: read values into an object and persist
+    const form = document.getElementById('noteForm');
+    form.onsubmit = e => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const text = document.getElementById('note').value.trim();
+      if (!name || !text) return;
+
+      const obj = {
+        id: Date.now(),
+        name,
+        text,
+        time: new Date().toLocaleTimeString() // store timestamp
+      };
+
+      const notes = loadNotes();
+      notes.push(obj);           // grow the array over time
+      saveNotes(notes);          // store updated array in localStorage
+      render();
+      form.reset();
+    };
+
+    // Remove item from localStorage by index
+    document.getElementById('list').onclick = e => {
+      if (e.target.tagName !== 'BUTTON') return;
+      const i = Number(e.target.dataset.i);
+      const notes = loadNotes();
+      notes.splice(i, 1);        // remove one item
+      saveNotes(notes);
+      render();
+    };
+
+    // Initial render on page load
+    render();
+  </script>
+</body>
+</html>
