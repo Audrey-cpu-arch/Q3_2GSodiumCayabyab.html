@@ -8,7 +8,7 @@
      
         
 
-        <form method = "post" action = "submit" onsubmit = "submitform()"  onreset = "resetform()"  > 
+        <form method = "post"  onsubmit = "submitform()"  onreset = "resetform()"  > 
           
             
 <h1> Student Information Form</h1>
@@ -89,8 +89,7 @@
             <option value = "astronomy"> ASTROSOC </option>
             <option value = "chemistry"> ATOM </option>
             <option value = "photography"> EXPOSURE </option>
-            <option value = "others"> other </option>
-            <option value = "none"> none </option>
+
             
         </select>
     </fieldset>
@@ -116,6 +115,9 @@
 <input type="reset" value = "reset form" onclick="alert('Are you sure you want to reset the form?')">
 </div>
 
+<div>
+    <button onload = "viewsignups()"> View Signups </button>
+</div>
 </form>
 
 <script>
@@ -126,8 +128,12 @@ function resetform(){
 
 function submitform(){
     alert("The form has been submitted.");
-}
 
+function viewsignups(){
+    window.location.replace("http://127.0.0.1:5500/viewSignUps.html");
+}
+   
+}
 
 
 
