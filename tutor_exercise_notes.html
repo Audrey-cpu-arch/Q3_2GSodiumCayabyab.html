@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h1></h1>
+
+    <form id="noteForm">
+        <input type="text" id="userNote" placeholder="Write a note..." required>
+        <button type="submit">Save</button>
+    </form>
+
+    <p>Saved Message: <span id="displayArea">None.</span></p>
+    
+    <script>
+        // This event triggers when the page finishes loading
+        // The previous nput is stilll ther even aftr refreshing
+        // window.load doesn't exist and ISN'T A THING
+        // window.onload when the browser has finished loading triggers the functions
+        window.onload = function() {
+            
+            // Retrieve the raw string from browser memory
+            const savedData = localStorage.getItem('myStickyNote');
+            
+            if (savedData) {
+                // Convert the "flat" string back into a JavaScript Object
+                const noteObj = JSON.parse(savedData);
+                
+                // Display it
+                document.getElementById('displayArea').textContent = noteObj.text;
+            }
+        };
+
+        document.getElementById('noteForm').onsubmit = function(e) {
+            e.preventDefault();
+
+            const textInput = document.getElementById('userNote').value;
+            const noteObject = { text: textInput };
+
+            // Convert the Object into a "flat" string so storage can read it
+            const jsonString = JSON.stringify(noteObject);
+
+            // Save that string into the browser's memory
+            localStorage.setItem('myStickyNote', jsonString);
+            document.getElementById('displayArea').textContent = noteObject.text;
+        };
+    </script>
+
+</body>
+</html>

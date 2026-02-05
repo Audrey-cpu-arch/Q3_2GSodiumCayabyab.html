@@ -115,13 +115,13 @@ window.onload triggers a fucntion such that it will do tis action every time the
 
 
 LOADING A WEBPAGE IN THE SAME WEBSITE, THUS CAUSING THE ORIGNAL PAGE TO BE REPLACED IN AN INSTANT
-                window.load = fucntion (){
+                window.onload = fucntion (){
                     window.location.href = "link"
                 };
 
 
                 LOADS A NEW TAB UPON USING THE WEBSITE
-                window.load = fucntion (){  
+                window.onload = fucntion (){  
                     window.open("link");            };
 
 
@@ -132,3 +132,8 @@ LOADING A WEBPAGE IN THE SAME WEBSITE, THUS CAUSING THE ORIGNAL PAGE TO BE REPLA
                     SYNTAX:
                      //JSON.stringify(object name);
                     //JSON.parse(string name);
+
+                    SAME FUCNTION AS WINDOW.ONLOAD BUT DIFFERENT SYNTAX:
+                    window.addEventListener("load", (event) => {JS code here});
+                    WINDOW.ONLOAD DOESN'T MAKE A NEW WEBPAGE, IT JSUT TELLS THE COMPUTER TO LOAD A FUNCTION
+                    WINDOW.OPEN IS THE OEN THTA MAKES THE NEW WEBPAGE, I CAN USE THE FOR THE CS3 FUNCTION. IT IS NOT REUQIRE DOT BE INSIDE THE WINDOW.LOAD
