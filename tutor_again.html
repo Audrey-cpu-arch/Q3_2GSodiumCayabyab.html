@@ -104,3 +104,31 @@
             <h2>✅ Current Order</h2>
             <div class="summary-item"><strong>Name:</strong> <span id="outName"></span></div>
             <div class="summary-item"><strong>Phone:</strong> <span id="outPhone"></span><
+
+
+                localSotrage.setItem saves data
+localSotrage.getItem gets the data's value
+
+localStorage.removeItem() removes the data entirley from the sotrgae
+
+window.onload triggers a fucntion such that it will do tis action every time the page loads
+
+
+LOADING A WEBPAGE IN THE SAME WEBSITE, THUS CAUSING THE ORIGNAL PAGE TO BE REPLACED IN AN INSTANT
+                window.load = fucntion (){
+                    window.location.href = "link"
+                };
+
+
+                LOADS A NEW TAB UPON USING THE WEBSITE
+                window.load = fucntion (){  
+                    window.open("link");            };
+
+
+                    JSON.stringify converts objects intro strongs
+                    Since local storage only stores string if you want to save an object you msut convert it into strings first
+                    JSON.parse converts string back into an object
+
+                    SYNTAX:
+                     //JSON.stringify(object name);
+                    //JSON.parse(string name);
