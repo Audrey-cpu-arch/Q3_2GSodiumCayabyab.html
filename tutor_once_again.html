@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <input type="text" id = "thrown">
+        
+        <button onclick = "add()"> Throw in bucket</button>
+        <br> Current Bucket:
+         <span id = "thrown_in">     </span>
+        
+    </body>
+    <script>
+        let bucket = [];
+        function add(){
+
+            const input = document.getElementById('thrown');
+            bucket.push(input.value);
+            document.getElementById('thrown_in').textContent =  bucket;
+            
+
+
+//order of code is important, you psuh the input in the array afterwards it is outputted
+
+                }
+    </script>
+</html>

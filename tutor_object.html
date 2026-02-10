@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <input type="text" id = "name">
+        <input type="text" id = "age">
+        <input type="text" id = "Gradelvl">
+        <button onclick = "makeCard()"> Create ID</button>
+        <br> Current Bucket:
+         <span id = "cardDisplay">     </span>
+        
+    </body>
+    <script>
+        function makeCard(){
+            //make object using all input values
+            //use name, age, gradelvl as keys
+            //display the object in the cardDisplay span
+const name_ha = document.getElementById("name").value
+const age_ah = document.getElementById("age").value
+const grade_oh= document.getElementById("Gradelvl").value
+
+            const id = {
+                name: name_ha,
+                age: age_ah,
+                grade: grade_oh
+            }
+
+            document.getElementById('cardDisplay').textContent = id.name + " " + id.age + " " + id.grade;
+          
+                }
+    </script>
+</html>
