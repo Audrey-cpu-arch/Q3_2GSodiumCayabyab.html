@@ -121,12 +121,37 @@
 </form>
 
 <script>
+    const id = document.GetElementById("studentid");
+    localStorage.setItem("student's id", id);
+
+    const fullname = document.GetElementById("fullname");
+    localStorage.setItem("student's full name", fullname);
+
+    const birthday = document.GetElementById("birthday");
+    localStorage.setItem("student's birthday", birthday);
+
+    const email = document.GetElementById("emailaddress");
+    localStorage.setItem("student's email", email);
+
+    const gradelevel = document.GetElementById("gradelevel");
+    localStorage.setItem("student's grade level", gradelevel);
+
+    const organization = document.GetElementById("Preferred Organization");
+    localStorage.setItem("student's organization", organization);
+
+    const reason = document.GetElementById("reasonsforjoining");
+    localStorage.setItem("student's reasons", reason);
+
+    
+
+    
 function resetform(){
     alert("The form has been resetted.");
 }
 
 
 function submitform(){
+    
     alert("The form has been submitted.");
 
 function viewsignups(){
