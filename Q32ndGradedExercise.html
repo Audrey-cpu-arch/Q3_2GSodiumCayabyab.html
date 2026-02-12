@@ -8,7 +8,7 @@
      
         
 
-        <form method = "post"  onsubmit = "submitform()"  onreset = "resetform()" onload="viewsignups()"  > 
+        <form method = "post"  onsubmit = "submitform()"  onreset = "resetform()" > 
           
             
 <h1> Student Information Form</h1>
@@ -116,7 +116,7 @@
 </div>
 
 <div>
-    <button onload = "viewsignups()"> View Signups </button>
+    <button onclick = "viewsignups()"> View Signups </button>
 </div>
 </form>
 
@@ -152,7 +152,8 @@ function resetform(){
 
 function submitform(){
     
-    alert("The form has been submitted.");
+    alert("The form has been submitted.")
+    console.log("Student's id: " + localStorage.getItem("student's id"));
 
 function viewsignups(){
     window.open("https://github.com/Audrey-cpu-arch/Q3_2GSodiumCayabyab.html/blob/main/viewSignUps.html", _blank);
