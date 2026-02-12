@@ -108,7 +108,7 @@
 
   
 <div>       
-<input type="submit" value = "submit form" onclick="alert('Are you sure you want to submit the form?')">
+<input type="submit" id = "submitbutton" value = "submit form" onclick="alert('Are you sure you want to submit the form?')">
 </div>
 
 <div>    
@@ -116,37 +116,37 @@
 </div>
 
 <div>
-    <button onclick = "viewsignups()"> View Signups </button>
+    <button onclick = "viewsignups()" id = "viewSignupsButton"> View Signups </button>
 </div>
 </form>
 
 <script>
     const id = document.getElementById("studentid").value;
-    JSON.strinify(id);
+    JSON.stringify(id);
     localStorage.setItem("student's id", id);
 
-    const fullname = document.GetElementById("fullname");
-    JSON.strinify(fullname);
+    const fullname = document.getElementById("fullname").value;
+    JSON.stringify(fullname);
     localStorage.setItem("student's full name", fullname);
 
-    const birthday = document.GetElementById("birthday");
-    JSON.strinify(birthday);
+    const birthday = document.getElementById("birthday").value;
+    JSON.stringify(birthday);
     localStorage.setItem("student's birthday", birthday);
 
-    const email = document.GetElementById("emailaddress");
-    JSON.strinify(email);
+    const email = document.getElementById("emailaddress").value;
+    JSON.stringify(email);
     localStorage.setItem("student's email", email);
 
-    const gradelevel = document.GetElementById("gradelevel");
-    JSON.strinify(gradelevel);
+    const gradelevel = document.getElementById("gradelevel").value;
+    JSON.stringify(gradelevel);
     localStorage.setItem("student's grade level", gradelevel);
 
-    const organization = document.GetElementById("Preferred Organization");
-    JSON.strinify(organization);
+    const organization = document.getElementById("Preferred Organization / Club").value;
+    JSON.stringify(organization);
     localStorage.setItem("student's organization", organization);
 
-    const reason = document.GetElementById("reasonsforjoining");
-    JSON.strinify(reason);
+    const reason = document.getElementById("reasonsforjoining").value;
+    JSON.stringify(reason);
     localStorage.setItem("student's reasons", reason);
 
     
@@ -159,14 +159,26 @@ function resetform(){
 
 function submitform(){
     
-    alert("The form has been submitted.")
-    
+    if(document.getElementById('submitbutton').clicked == true){
+        document.getElementById("form").submit();
+    alert("The form has been submitted.");
 
+
+    }
+
+else if(document.getElementById('viewSignupsButton').clicked == true){
 function viewsignups(){
+    return false;
     window.open("https://github.com/Audrey-cpu-arch/Q3_2GSodiumCayabyab.html/blob/main/viewSignUps.html", _blank);
 }
-   
 }
+
+}
+    
+
+
+   
+
 
 //textfield use .innerHTML
 //the actual input it is .value
