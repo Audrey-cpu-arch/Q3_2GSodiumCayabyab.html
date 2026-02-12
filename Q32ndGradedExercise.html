@@ -8,7 +8,7 @@
      
         
 
-        <form method = "post"  onsubmit = "submitform()"  onreset = "resetform()" > 
+        <form method = "post"   onreset = "resetform()" > 
           
             
 <h1> Student Information Form</h1>
@@ -122,24 +122,31 @@
 
 <script>
     const id = document.GetElementById("studentid");
+    JSON.strinify(id);
     localStorage.setItem("student's id", id);
 
     const fullname = document.GetElementById("fullname");
+    JSON.strinify(fullname);
     localStorage.setItem("student's full name", fullname);
 
     const birthday = document.GetElementById("birthday");
+    JSON.strinify(birthday);
     localStorage.setItem("student's birthday", birthday);
 
     const email = document.GetElementById("emailaddress");
+    JSON.strinify(email);
     localStorage.setItem("student's email", email);
 
     const gradelevel = document.GetElementById("gradelevel");
+    JSON.strinify(gradelevel);
     localStorage.setItem("student's grade level", gradelevel);
 
     const organization = document.GetElementById("Preferred Organization");
+    JSON.strinify(organization);
     localStorage.setItem("student's organization", organization);
 
     const reason = document.GetElementById("reasonsforjoining");
+    JSON.strinify(reason);
     localStorage.setItem("student's reasons", reason);
 
     
@@ -153,7 +160,7 @@ function resetform(){
 function submitform(){
     
     alert("The form has been submitted.")
-    console.log("Student's id: " + localStorage.getItem("student's id"));
+    
 
 function viewsignups(){
     window.open("https://github.com/Audrey-cpu-arch/Q3_2GSodiumCayabyab.html/blob/main/viewSignUps.html", _blank);
