@@ -121,7 +121,7 @@
 </form>
 
 <script>
-    const id = document.GetElementById("studentid");
+    const id = document.getElementById("studentid").value;
     JSON.strinify(id);
     localStorage.setItem("student's id", id);
 
@@ -168,7 +168,8 @@ function viewsignups(){
    
 }
 
-
+//textfield use .innerHTML
+//the actual input it is .value
 </script>
     </body>
 </html>
