@@ -116,7 +116,7 @@
 </div>
 
 <div>
-    <button onclick = "viewsignups()" id = "viewSignupsButton"> View Signups </button>
+    <button onclick = "submitform()" id = "viewSignupsButton"> View Signups </button>
 </div>
 </form>
 
@@ -156,6 +156,9 @@ function resetform(){
     alert("The form has been resetted.");
 }
 
+function viewsignups(){
+    window.open("https://github.com/Audrey-cpu-arch/Q3_2GSodiumCayabyab.html/blob/main/viewSignUps.html", _blank);
+}
 
 function submitform(){
     
@@ -167,14 +170,10 @@ function submitform(){
     }
 
 else if(document.getElementById('viewSignupsButton').clicked == true){
-function viewsignups(){
-    return false;
-    window.open("https://github.com/Audrey-cpu-arch/Q3_2GSodiumCayabyab.html/blob/main/viewSignUps.html", _blank);
+return false;
+ viewsignups()
 }
-}
-
-}
-    
+}   
 
 
    
