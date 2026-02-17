@@ -146,16 +146,18 @@ function viewsignups(){
 function submitform(){
     
     if(document.getElementById('submitbutton').clicked == true){
-        document.getElementById("form").submit();
+        
+        
     alert("The form has been submitted.");
-        return true;
+    return true;
+    document.getElementById("form").submit();
 
 
     }
 
 else if(document.getElementById('viewSignupsButton').clicked == true){
 return false;
- viewsignups()
+ viewsignups();
 }
 }   
 
