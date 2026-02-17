@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1> Jollibee Guest List</h1>
+        <input type = "text" id = "name" placeholder = "Enter your name">
+        <input type = "number" id = "age" placeholder = "Enter your age">
+        <button onclick = "addtoList()"> Add to List </button>
+        <button onclick = "clearList()"> Clear List </button>
+        <span> Guest History:</span>
+        <p id = "guest" ></p>
+    
+    <script>
+        let guest_name = document.getElementById('name').value;
+        let guest_age = document.getElementById('age').value;
+
+        function addtolist(guest_name, guest_age){
+            const added_guest = {
+                name: guest_name,
+                age: guest_age
+            }
+ 
+            let string_added_guest = JSON.stringify(added_guest);
+            localStorage.setItem("added_guest", string_added_guest);
+            localStorage.getItem("added_guest");
+
+            return string_added_guest;
+            document.getElementById('guest').textContent = added_guest.name + "(" + added_guest.age + ")".text;
+        }
+
+        function clearList(){
+             localStorage.clear();
+        }
+//return isn't required for functions, it is onyl when you want to return an output
+// += add 
+    </script>
+    </body>
+</html>

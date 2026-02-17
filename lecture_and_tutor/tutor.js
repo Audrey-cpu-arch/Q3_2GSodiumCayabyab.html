@@ -40,11 +40,13 @@ let input = data.toString().trim();
 function createProperties(pInfo) {
     const obj = {};
     for (let i=0; i < pInfo.length; i+=6) {
-        obj[pInfo[i]] = { pName:[pInfo[i]],
-            pCat:[pInfo[i+1]],
-            pMan:[pInfo[i+2]],
-            pPrice:[pInfo[i+3]],
-            pQty:[pInfo[i+4]]
+        //Removed [] from pName:[pInfo[i+1]] and so on as we're trying to assign a string value, not an array.
+        //added 1 to each index before - pName: pInfo, pCat: pName 
+        obj[pInfo[i]] = { pName:pInfo[i+1],
+            pCat:pInfo[i+2],
+            pMan:pInfo[i+3],
+            pPrice:pInfo[i+4],
+            pQty:pInfo[i+5]
               // this represents the productid.
               // create the properties here for each productid...refer to the list below under createArray      
 
@@ -66,7 +68,12 @@ function showProducts (obj, input) {
   let products = {}
   let retValue = false;
   for (let key in obj) {
-
+    //checks if inputted manufacturer name matches obj[key].pMan
+    if (obj[key].pMan === input) {
+        // if it matches, assign the product object to products[key]
+      products[key] = obj[key];
+      retValue = true;
+    }
 
        // fill-in the required line codes to get products under a Manufacturer name in (input) from the object (obj)
   }
@@ -86,10 +93,6 @@ function showProducts (obj, input) {
 function createArray() {
     // EACH LINE below are information regarding one(1) electronic or mechanical product 
     // with descriptions as: productid, pName, pCat, pMan, pPrice, pQty 
-
-for(let i = 0; i < pInfo.length; i++){
-let products = new Array(pInfo[i], pInfo[i+1], pInfo[i+2], pInfo[i+3], pInfo[i+4], pInfo[i+5]);
-}
     const pInfo = [
 "AB3023010","Capacitor C10","Electronics","ElecInnovate","2.5","100",
 "AB3023011","Gear Set G50","Mechanical","GearTech","35","400",
@@ -103,25 +106,4 @@ let products = new Array(pInfo[i], pInfo[i+1], pInfo[i+2], pInfo[i+3], pInfo[i+4
 "AB3023019","Screw Set S100","Mechanical","FastenMasters","7.5","900",
 "AB3023020","Speaker S50","Electronics","AudioTech","20","400",
 "AB3023021","Shaft Assembly A150","Mechanical","GearTech","45","250",
-"AB3023022","Capacitor C20","Electronics","ElecInnovate","3","800",
-"AB3023023","Piston P400","Mechanical","EngineMasters","60","150",
-"AB3023024","Relay R10","Electronics","SenseSys","5","1000",
-"AB3023025","Axle Assembly A200","Mechanical","BuildMakers","80","200",
-"AB3023026","Capacitor C30","Electronics","Techtronics","4","600",
-"AB3023027","Gearbox G200","Mechanical","GearTech","120","100",
-"AB3023028","Switch S20","Electronics","ElecInnovate","8","700",
-"AB3023029","Spring Set S200","Mechanical","SpringTech","25","400",
-"AB3023030","Amplifier A100","Electronics","AudioTech","50","300",
-"AB3023031","Bearing B40","Mechanical","BuildMakers","15","800",
-"AB3023032","Capacitor C40","Electronics","Techtronics","5","500",
-"AB3023033","Gear Set G100","Mechanical","GearTech","80","150",
-"AB3023034","Sensor S25","Electronics","SenseSys","10","900",
-"AB3023035","Nut and Bolt Set N50","Mechanical","FastenMasters","12","700",
-"AB3023036","Amplifier A200","Electronics","AudioTech","100","200",
-"AB3023037","Circuit Board C20","Electronics","CircuitCo","10","1000",
-"AB3023038","Gearbox G300","Mechanical","GearTech","200","500",
-"AB3023039","Transducer T10","Electronics","SensiTech","25","500",
-"AB3023040","Spring Set S300","Mechanical","SpringTech","40","300"
-];
-  return pInfo;
-}
+"AB302
