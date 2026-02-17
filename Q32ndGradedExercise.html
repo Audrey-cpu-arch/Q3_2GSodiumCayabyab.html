@@ -121,35 +121,18 @@
 </form>
 
 <script>
-    const id = document.getElementById("studentid").value;
-    JSON.stringify(id);
-    localStorage.setItem("student's id", id);
+    const fullinformation = {};
 
-    const fullname = document.getElementById("fullname").value;
-    JSON.stringify(fullname);
-    localStorage.setItem("student's full name", fullname);
+    fullinformation.id = document.getElementById("studentid").value;
+    fullinformation.fullname = document.getElementById("fullname").value;
+    fullinformation.birthday = document.getElementById("birthday").value;
+    fullinformation.email = document.getElementById("emailaddress").value;
+    fullinformation.gradelevel = document.getElementById("gradelevel").value;
+    fullinformation.organization = document.getElementById("Preferred Organization / Club").value;
+    fullinformation.reasons = document.getElementById("reasonsforjoining").value;
 
-    const birthday = document.getElementById("birthday").value;
-    JSON.stringify(birthday);
-    localStorage.setItem("student's birthday", birthday);
-
-    const email = document.getElementById("emailaddress").value;
-    JSON.stringify(email);
-    localStorage.setItem("student's email", email);
-
-    const gradelevel = document.getElementById("gradelevel").value;
-    JSON.stringify(gradelevel);
-    localStorage.setItem("student's grade level", gradelevel);
-
-    const organization = document.getElementById("Preferred Organization / Club").value;
-    JSON.stringify(organization);
-    localStorage.setItem("student's organization", organization);
-
-    const reason = document.getElementById("reasonsforjoining").value;
-    JSON.stringify(reason);
-    localStorage.setItem("student's reasons", reason);
-
-    
+    const information = JSON.stringify(fullinformation);
+    localStorage.setItem("information", information);
 
     
 function resetform(){
