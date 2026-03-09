@@ -15,10 +15,53 @@
             <option value = "chemistry"> ATOM </option>
             <option value = "photography"> EXPOSURE </option>
 
-
+<p id = "clubinfo"></p>
 
             <script>
-               const christian = document.getElementById("christian_club);
+
+
+               let club = document.getElementById("club");
+              document.getElementById("club").onchange = outputting;
+
+              function outputting (){
+               
+                if(document.getElementById("club").value == "christian"){
+
+
+                const christian_club_members = [
+                {Id: 12365,
+                 Fullname: "Otto Apocalypse",
+                 Grade: "Grade 9",
+                 Email: "overseerapocalypse@schiskal.com",
+                 Mobile: 500-16-2010,
+                 InternorExtern: Intern
+                },
+
+                {Id: 69671,
+                 Fullname: "Kiana Kaslana",
+                 Grade: "Grade 8",
+                 Email: "kianakaslana@schiskal.com",
+                 Mobile: 800-910-23,
+                 InternorExtern: Intern},
+                {
+                  Id: 123456,
+                 Fullname: "Kallen Kaslana",
+                 Grade: "Grade 9",
+                 Email: "holykaslana@schiskal.com",
+                 Mobile: 500-970-253,
+                 InternorExtern: Extern
+                }
+                ]
+
+
+                document.getElementById("clubinfo").innerHTML = Object.values(christian_club_members);
+
+              }
+
+
+              }
+               
+
                
             </script>
 
